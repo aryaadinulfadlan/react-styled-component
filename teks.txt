@@ -1,0 +1,41 @@
+Hallo apa kabar semuanya? semoga sehat selalu ya! Pada kesempatan kali ini saya ingin sharing tentang salah satu library CSS in JS, yaitu styled-components. CSS in JS atau disebut juga JSS  merupakan suatu cara agar kita bisa menulis kode CSS didalam file JavaScript. Tujuannya agar penulisan kode CSS kita sedikit lebih "sakti" dari biasanya. Hal ini tentunya dengan tetap mempertahankan fungsionalitas CSS itu sendiri. Styled-Components merupakan salah satu library JSS yang cukup populer, setidaknya ada lebih dari 50 library JSS.
+Ada beberapa keuntungan saat kita menggunakan styled-components, diantaranya kita tidak perlu pusing2 lagi mikirin nama class untuk sebuah element. Nama class akan di generate secara otomatis dan bersifat unik, artinya tidak akan nama class yang sama antar element. Kemudian karena code CSS ini ditulis didalam file JavaScript, artinya kita juga bisa melakukan pengkondisian dalam styling element. Oke langsung aja kita coba ya!
+
+Instalasi
+Dalam pembahasan kali ini saya akan menggunakan styled-components pada ReactJS, pertama kita install dulu reactjs nya menggunakan CRA dengan command berikut:
+npx create-react-app react-styled-component
+Setelah instalasi react berhasil masuk ke direktori project react, dan install styled-component dengan command berikut:
+cd react-styled-component
+npm install --save styled-components
+
+Setelah proses instalasi selesai maka kita bisa menghapus beberapa file yang belum diperlukan didalam projek react kita, sehingga struktur isi foldernya akan seperti ini:
+
+GlobalStyles
+Hal pertama yang perlu kita ketahui dalam menggunakan styled-component adalah GlobalStyles. GlobalStyles adalah cara agar kita bisa menerapkan style secara global didalam aplikasi yang dibangun, artinya style ini akan berlaku diseluruh component (jika tidak ada everriding style). Hal ini dapat kita manfaatkan untuk melakukan CSS reset agar kita memiliki kendali penuh terhadap styling aplikasi react. Untuk membuat GlobalStyles, yaitu dengan cara membuat sebuah file baru didalam folder src dengan nama GlobalStyles.js lalu isi dengan kode berikut:
+
+Untuk ketentuan styling ini disesuaikan sama kebutuhan aja ya. Kemudian untuk menerapkan global styling ini yaitu dengan cara buka file App.js dan modifikasi seperti berikut:
+
+
+Nah dengan cara ini maka global style sudah diterapkan didalam aplikasi kita. Ketentuan styling nya akan selalu dipakai secara otomatis (jika tidak ada overriding style di sub-component).
+
+Styling Element HTML
+Untuk styling element HTML sangat simple, kita dapat menggunakan seluruh fitur styling bawaan css. Modifikasi file App.js sebelumnya.
+
+Cukup import styled from styled-component, lalu kita buat sebuah konstanta baru untuk menyimpan  element HTML beserta format styling nya. Oh ya teman2, tanda petik yang digunakan untuk membungkus styling adalah backtick (``). Posisinya disebelah angka 1 pada keyboard. Element HTML ini bisa kita render seperti React Component biasa. .Hasilnya:
+
+Render Based on Props
+Menurutku fitur ini sangat bagus sekali, kita bisa merender style sebuah element berdasarkan props yang dikirim. Ini sangat berguna saat ingin memberikan format style yang seragam pada kondisi tertentu. Selain itu juga berguna untuk pengkondisian dalam styling.
+
+Kemudian untuk pemanggilan komponen nya bisa berkali-kali dengan hasil warna yang berbeda:
+
+---
+
+Maka akan menampilkan kotak dengan warna yang berbeda-beda, sesuai dengan nilai "warna" yang di passing.
+
+---
+
+Pseudo Class & Pseudo Element
+Styled-component bisa juga menggunakan pseudo class atau pseudo element. yaitu dengan menggunakan karakter ampersand(&), lalu di ikuti pseudo class atau pseudo element yang ingin digunakan.
+
+Conclusion
+Oke teman2, mantap kan? cukup mantap, mantap kali. Sebenarnya masih ada banyak lagi fitur styled-component yang belum dibahas pada tulisan kali ini. Jika ingin tahu lebih lanjut, teman2 bisa cek langsung di dokumentasi resminya. Saya ucapkan terimakasih sudah membaca artikel singkat ini, jika ada pertanyaan silahkan tinggalkan dikolom komentar ya!
